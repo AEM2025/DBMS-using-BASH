@@ -20,3 +20,5 @@ Upon user Connect to Specific Database, there will be new Screen with this Menu:
 - Select From Table
 - Delete From Table
 - Update Table
+
+Added from local repo
