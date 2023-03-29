@@ -10,13 +10,20 @@ do
 	select answer in "${options[@]}"
 	do
 		case $REPLY in
-			1) echo "Create DB" ;;
-			2) echo "List DBs" ;;
+			1) echo "Create DB"
+			       . ./Create_DB.sh
+			       ;;
+			2) echo "List DBs"
+			       	;;
 			3) echo "Connect to DBs"
-			       . ./Connect_DB.sh	;;
-			4) echo "Drop DBs" ;;
-			5) exit;;
-			*) echo "Invalid input please try again later" ;;
+			       . ./Connect_DB.sh
+			       ;;
+			4) echo "Drop DBs" 
+				;;
+			5) exit
+				;;
+			*) echo "Invalid input please try again later"
+			       	;;
 		esac
 	done
 done
