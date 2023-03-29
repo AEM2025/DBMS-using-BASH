@@ -14,7 +14,7 @@ do
 			       . ./Create_DB.sh
 			       ;;
 			2) echo "List DBs"
-			       	;;
+			      . ./List_DB.sh 	;;
 			3) echo "Connect to DBs"
 			       . ./Connect_DB.sh
 			       ;;
