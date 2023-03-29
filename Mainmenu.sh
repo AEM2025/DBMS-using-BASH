@@ -19,7 +19,7 @@ do
 			       . ./Connect_DB.sh
 			       ;;
 			4) echo "Drop DBs" 
-				. ./removeDB.sh;;
+				. ./removeDB.sh ;;
 			5) exit
 				;;
 			*) echo "Invalid input please try again later"
