@@ -1,13 +1,13 @@
 #!/bin/bash 
 
-echo "enter the  name of db you want to remove "
 
-read -p db_name
+read -rp "enter the  name of db you want to remove " db_name
 
-if [ -d DataBases/$db_name ]
-	then rm -r $db_name 
-
+# check if Database exist or not
+if [ -d ./DataBases/$db_name ]
+then
+       	rm -r $db_name 
 else
 
-	echo "the entered name is wrong  "
+	echo "The entered name is wrong"
 fi
