@@ -32,7 +32,9 @@ then
 					# Pass DB_Name to the file to delete tables from it
 					source ./Drop_Table.sh $DB_Name
 					;;
-				4) echo "Insert into Table" ;;
+				4) echo "Insert into Table"
+					source ./Insert_Into_Table.sh $DB_Name
+					;;
 				5) echo "Select from table" ;;
 				6) echo "Delete from table" ;;
 				7) echo "Update table" ;;
