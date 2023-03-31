@@ -18,10 +18,9 @@ Upon user Connect to Specific Database, there will be new Screen with this Menu:
 - Create Table 
 - Drop Table
 - Insert into Table
-- Delete From Table
-
-(Abdo)
 - Select From Table
+(Abdo)
+
 - Update Table
 - List Tables
-
+- Delete From Table
