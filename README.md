@@ -19,6 +19,7 @@ Upon user Connect to Specific Database, there will be new Screen with this Menu:
 - Drop Table
 - Insert into Table
 - Select From Table
+
 (Abdo)
 
 - Update Table
