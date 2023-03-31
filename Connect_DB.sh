@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 
 #SP3="Please enter your choice"
 
@@ -35,7 +34,9 @@ then
 				4) echo "Insert into Table"
 					source ./Insert_Into_Table.sh $DB_Name
 					;;
-				5) echo "Select from table" ;;
+				5) echo "Select from table"
+					source ./Select_Table.sh $DB_Name
+					;;
 				6) echo "Delete from table" ;;
 				7) echo "Update table" ;;
 				8) echo "Back"
