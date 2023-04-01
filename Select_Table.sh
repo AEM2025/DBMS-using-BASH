@@ -39,10 +39,8 @@ else
 fi
 }
 
-# Select specific column
-# function Select_Column {}
 
-options=("Select all" "Select row" "Select Column" "Exit")
+options=("Select all" "Select row" "Exit" "Back")
 echo "Enter choice from 1 to 4"
 
 while [[ $REPLY != "Exit" ]]
@@ -65,10 +63,10 @@ do
 				       Select_Row
 			       fi
 				;;
-			3) echo "select specific column" ;;
-			4) exit ;;
+			3) exit ;;
+			4) . ./Connect_DB.sh ;;
+
 			*) echo "please enter valid option";;
 		esac
 	done
 done
-
