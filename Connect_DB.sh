@@ -9,14 +9,15 @@
 read -rp "Please enter database that you want to connect: " DB_Name
 
 Check=$(find ./DataBases/$DB_Name -type d)
-#echo "$Check"
+
+options=("Create Table" "List Tables" "Drop Table" "Insert into Table" "Select From Table" "Delete From Table" "Update Table" "Back" "Exit")
+
 
 # This Condition to test if DB exist or not
 
 if [[ $Check != "" ]]
 then
 	echo "Enter choices from 1 to 9"
-	options=("Create Table" "List Tables" "Drop Table" "Insert into Table" "Select From Table" "Delete From Table" "Update Table" "Back" "Exit")
 	while [[ "$REPLY" != "Exit" ]]
 	do
 		select answer in "${options[@]}"
