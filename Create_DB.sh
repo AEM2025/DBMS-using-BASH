@@ -12,23 +12,19 @@ read -rp "Enter DB name: " db_name
 # We use this variable for check.
 
 error="0"
-function Validations{
+
+function Validations {
 
 	# Check DataBases file exist or not
-	
-	$Dir='/DataBases'
-	echo "$Dir"	
-	if [ ! -d $Dir ]
+	if [ ! -d "./DataBases" ]
 	then
-		echo "DataBases file not exist"
+		echo "Warning! DataBases file not exist"
 		mkdir ./DataBases
 	else 
-		echo "DataBases file exist"
+		echo "DataBases file exist ✓✓"
 	fi
 
 	strREGEX="^[a-zA-Z_]+$"
-
-	echo "$db_name &  $strREGEX"
 	if [[ $db_name =~ $strREGEX ]]
 	then
 		error="0"
@@ -37,22 +33,20 @@ function Validations{
 	fi
 }
 
-
-
-
-# check if this db is already exists
 # call function to check everything
 Validations
-if [ $error = 0]
+
+if [ $error = 0 ]
 then
+	# check if this db is already exists
 	if [ -d ./DataBases/$db_name ]
 	then
-		echo "this db is already exist!!!!!!!!!!"
+		echo "Error!! This Database is already exists"
 	else
 		mkdir DataBases/$db_name
-		echo "DB created successfully.........."
+		echo "DB created successfully ✓✓✓"
 	fi
 
 else
-	echo "Database name contain spaces or special characters"
+	echo "Error! Database name contain special characters"
 fi
