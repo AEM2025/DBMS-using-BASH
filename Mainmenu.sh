@@ -10,16 +10,16 @@ do
 	select answer in "${options[@]}"
 	do
 		case $REPLY in
-			1) echo "Create DB"
+			1) #echo "Create DB"
 			       . ./Create_DB.sh
 			       ;;
-			2) echo "List DBs"
+			2) #echo "List DBs"
 			      . ./List_DB.sh
 			      ;;
-			3) echo "Connect to DBs"
+			3) #echo "Connect to DBs"
 			       . ./Connect_DB.sh
 			       ;;
-			4) echo "Drop DBs" 
+			4) #echo "Drop DBs" 
 				. ./Drop_DB.sh 
 				;;
 			5) exit
