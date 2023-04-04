@@ -44,24 +44,24 @@ then
 		select answer in "${options[@]}"
 		do
 			case $REPLY in
-				1) echo "Create Table" 
+				1) #echo "Create Table" 
 					# Pass DB_Name to the file to create tables inside it
 					source ./Create_Table.sh $DB_Name
 					;;
 				2) echo "List Table" ;;
-				3) echo "Drop Table"
+				3) #echo "Drop Table"
 					# Pass DB_Name to the file to delete tables from it
 					source ./Drop_Table.sh $DB_Name
 					;;
-				4) echo "Insert into Table"
+				4) #echo "Insert into Table"
 					source ./Insert_Into_Table.sh $DB_Name
 					;;
-				5) echo "Select from table"
+				5) #echo "Select from table"
 					source ./Select_Table.sh $DB_Name
 					;;
 				6) echo "Delete from table" ;;
 				7) echo "Update table" ;;
-				8) echo "Back"
+				8) #echo "Back"
 					source ./Mainmenu.sh;;
 				9) exit;;
 				*) echo "Invalid input please try again later" ;;
