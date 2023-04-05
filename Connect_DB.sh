@@ -48,7 +48,9 @@ then
 					# Pass DB_Name to the file to create tables inside it
 					source ./Create_Table.sh $DB_Name
 					;;
-				2) echo "List Table" ;;
+				2) #echo "List Table"
+				 	. ./List_Table.sh $DB_Name      
+					;;
 				3) #echo "Drop Table"
 					# Pass DB_Name to the file to delete tables from it
 					source ./Drop_Table.sh $DB_Name
