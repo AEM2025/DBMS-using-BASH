@@ -14,14 +14,14 @@ function validation {
 		error="0"
 	else
 		error="1"
-		echo "DataBases file not exist"
+		echo "Error! DataBases file not exist ❌"
 	fi
 
 	# 2 - Check if there's no DBs yet.
-	if [ ! -d "./DataBases/" ]
+	if [ ! -d "./DataBases/" -a $error = 0 ]
 	then
 		error="1"
-		echo "There's no DBs yet"
+		echo "Error! There's no DBs yet ❌"
 	else
 		error="0"
 	fi
