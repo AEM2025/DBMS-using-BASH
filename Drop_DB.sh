@@ -19,7 +19,7 @@ function Validation {
 		echo "Error! DataBases file not exist ❌"
 	fi
 
-	if [ -d "./DataBases/$db_name" ]
+	if [ -d "./DataBases/$db_name" -a $error = 0 ]
 	then
 		error="0"
 	else

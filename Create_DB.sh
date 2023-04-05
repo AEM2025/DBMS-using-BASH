@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # Test Cases:
-# 1 - Validate if Databases file exist or not.
-# 2 - Validate DB_name not contain special characters or spaces.
+# [Done..] 1 - Validate if Databases file exist or not.
+# [Done..] 2 - Validate DB_name not contain special characters or spaces.
+# [Done..] 3 - Validate if DB is already exist
+
 
 # -r to ignore slash as a multi line and consider it as character.
 # -p to read and display message in the same line instead of using echo.
@@ -41,12 +43,12 @@ then
 	# check if this db is already exists
 	if [ -d ./DataBases/$db_name ]
 	then
-		echo "Error!! This Database is already exists"
+		echo "Error!! This Database is already exists ❌"
 	else
 		mkdir DataBases/$db_name
 		echo "DB created successfully ✓✓✓"
 	fi
 
 else
-	echo "Error! Database name contain special characters"
+	echo "Error! Database name contain special characters ❌"
 fi
