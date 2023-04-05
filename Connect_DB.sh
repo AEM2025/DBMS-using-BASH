@@ -20,7 +20,7 @@ function validation {
 
 	# 2 - This Condition to test if DB exist or not
 	Check=`find ./DataBases/$DB_Name -type d`
-	if [[ $Check = "" ]]
+	if [[ $Check = "" && $error = "0" ]]
 	then
 		error="1"
 		echo "There's no DB with this name: $DB_Name"
