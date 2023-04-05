@@ -102,6 +102,7 @@ then
 		echo $Col_Info >> ./DataBases/$1/$Table_Name.metadata
 		touch ./DataBases/$1/$Table_Name.DATA
 		chmod +x ./DataBases/$1/$Table_Name.DATA
+		cat    "DataBases/$1/$Table_Name.metadata" | cut -d: -f1 | xargs |sed -e 's/ /:/g'>"DataBases/$1/$Table_Name.DATA"
 	done
 else
 	echo "Can't complete this action ❌❌"
