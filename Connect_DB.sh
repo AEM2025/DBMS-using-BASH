@@ -62,7 +62,9 @@ then
 					source ./Select_Table.sh $DB_Name
 					;;
 				6) echo "Delete from table" ;;
-				7) echo "Update table" ;;
+				7) echo "Update table" 
+					. ./Update_Table.sh
+					;;
 				8) #echo "Back"
 					source ./Mainmenu.sh;;
 				9) exit;;

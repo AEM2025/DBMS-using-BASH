@@ -5,30 +5,58 @@ Steps:
 1 - [Done...] Read metadat file into array.
 2 - [Done...] Regex for check numbers and strings
 3 - Check PK and must be uniqe number
+
+Test Cases:
+[Done..] 1 - Check Db is already exist.
+[Done..] 2 - Check Table is exist.
+
 '
-
-read -rp "Enter table name " tableName
-DB=$1
-
-
 # '\n' read line until new line, so we will read file line by line
 # -d delimitar. read until this character.
 # -r ignore slash as escaping character.
 # <<< Here's string. work as input to the command
 
 
+read -rp "Enter table name " tableName
+DB_Name=$1
+error=""
+
+# function for validations
+function Validation {
+	
+	# 1 - Check Db is already exist
+	if [ -d "./DataBases/$DB_Name" ]
+	then
+		error="0"
+	else
+		error="1"
+	       	echo "Error! No Database with this name: $DB_Name ❌"
+	fi
+
+        # 2 - Check if this table exist or not and Both files are exists (data & Metadata)
+	if [ -f "./DataBases/$DB_Name/$tableName.DATA" -a -f "./DataBases/$DB_Name/$tableName.metadata" -a $error = 0 ]
+	then
+		error="0"
+	else
+		error="1"		
+		echo "Error! This table not exist ❌"
+	fi
+}
+
+
 # new string to save data to it
 row=""
 
 # This flag will be 1 if there's any error in values
-flag="0"
+dataTypeError="0"
+
+Validation
 
 # ${!lines[@]} ----> to read index of this item
-# check if tablename exist or not first
 
-if [ -f ./DataBases/$DB/$tableName.DATA -a -f ./DataBases/$DB/$tableName.metadata ]
+if [ $error = 0 ]
 then
-	IFS=$'\n' read -d '' -r -a lines < "DataBases/$DB/$tableName.metadata"
+	IFS=$'\n' read -d '' -r -a lines < "./DataBases/$DB_Name/$tableName.metadata"
 
 	for i in "${!lines[@]}"
 	do
@@ -37,10 +65,6 @@ then
 		Col_Name=${column[0]}
 		Col_dt=${column[1]}
 		Col_pk=${column[2]}
-
-		#echo "$Col_Name"
-		#echo "$Col_dt"
-		#echo "$Col_pk"
 
 		read -rp "Enter value for column $Col_Name " Col_value
 	
@@ -56,8 +80,8 @@ then
 		then
 			if ! [[ $Col_value =~ $intRegex ]]
 			then
-				flag="1"
-				echo "Error: value must be number !!!!"
+				dataTypeError="1"
+				echo "Error: value must be number ❌"
 			fi
 		fi
 	
@@ -65,17 +89,14 @@ then
 
 		if [[ $Col_dt = "s" || $Col_dt = "S" ]]
 		then
-		
 			if ! [[ $Col_value =~ $strRegex ]]
 			then
-				flag="1"
-				echo "Error: value must be valid characters only !!"
+				dataTypeError="1"
+				echo "Error: value contain special character ❌"
 			fi
 		fi
 
-		# check if there's any error with values. if everything is ok. append vlues to table.DATA file.
-
-		if [[ $flag = 0 ]]
+		if [[ $dataTypeError = 0 ]]
 		then
 			if [ $i -eq 0 ]
 			then
@@ -83,13 +104,13 @@ then
 			else
                                 row="$row:$Col_value"
 			fi
-                        echo $row >> ./DataBases/$DB/$tableName.DATA
-		#else
-			#echo "New values has an error, please solve it and try again"
 		fi
 	done
 
-else
-	echo "Table not exist !!!"
+	if [[ $dataTypeError = 0 ]]
+	then
+		echo $row >> ./DataBases/$DB/$tableName.DATA
+	else
+		echo "Can't complete this action ❌"
+	fi
 fi
-
