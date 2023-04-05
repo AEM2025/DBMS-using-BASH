@@ -80,10 +80,10 @@ then
 			if [ $i -eq 0 ]
 			then
 				row=$Col_value
-				echo $row >> ./DataBases/$DB/$tableName.DATA
 			else
-				echo $row:$Col_value >> ./DataBases/$DB/$tableName.DATA
+                                row="$row:$Col_value"
 			fi
+                        echo $row >> ./DataBases/$DB/$tableName.DATA
 		#else
 			#echo "New values has an error, please solve it and try again"
 		fi
