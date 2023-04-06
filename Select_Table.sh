@@ -27,9 +27,9 @@ function Select_All {
 function Select_Row {
 
 Data_Num=$(cat $DIR/$Table_Name.DATA | wc -l)
-echo "We have $Data_Num in this table"
+echo "We have $Data_Num records in this table"
 echo ""
-read -rp "Enter number of row that you want: " row
+read -rp "Enter number of record that you want: " row
 if [ $row -lt $Data_Num ]
 then
 	data=$(cat $DIR/$Table_Name.DATA | sed -n "$row p" )

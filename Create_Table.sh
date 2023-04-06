@@ -31,7 +31,7 @@ function validation {
 	# Note:	- We must check if the error variable is still 0.
 	# 	- Otherwise, we will override the value of it and may cause an errors.
 
-	if [ -d "./DataBases/$1" -a $error = 0 ]
+	if [ -d "./DataBases/$1" -o $1 = " "-a $error = 0 ]
         then
                 error="0"
         else
