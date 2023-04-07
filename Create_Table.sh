@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Test Cases:
 # [Done..] 1 - Check if DataBases file exist.
 # [Done..] 2 - Check if DB file is exist.
@@ -31,12 +32,12 @@ function validation {
 	# Note:	- We must check if the error variable is still 0.
 	# 	- Otherwise, we will override the value of it and may cause an errors.
 
-	if [ -d "./DataBases/$1" -o $1 = " "-a $error = 0 ]
+	if [ -d "./DataBases/$1" -a $error = 0 ]
         then
                 error="0"
         else
                 error="1"
-                echo "Error! No DB with this name: $DB_Name ❌"
+                echo "Error! No DB with this name: $1 ❌"
         fi
 
         # 3 - Check if this table exist or not and Both files are exists (data & Metadata)
