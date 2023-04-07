@@ -3,6 +3,7 @@
 # Test Cases:
 # [Done..] 1 - Check if DataBases folder not exist.
 # [Done..] 2 - If DB not exist
+# [Done..] 3 - Check if entered value is null or empty.
 
 read -rp "Please enter database that you want to connect: " DB_Name
 
@@ -10,7 +11,7 @@ error=""
 function validation {
 	
 	# 1 - Check if DataBases folder not exist.
-	if [ -d ./DataBases ]
+	if [ -d "./DataBases" ]
 	then
 		error="0"
 	else
@@ -19,6 +20,8 @@ function validation {
 	fi
 
 	# 2 - This Condition to test if DB exist or not
+	# 3 - Check entered valu if null or empty
+
 	if [ -d "./DataBases/$DB_Name" -a ! -z "$DB_Name" -a "$DB_Name" != " " -a $error = 0 ]
         then
                 error="0"
@@ -63,7 +66,7 @@ then
 					source ./Select_Table.sh $DB_Name
 					;;
 				6) echo "Delete from table" ;;
-				7) echo "Update table" 
+				7) #echo "Update table" 
 					. ./Update_Table.sh
 					;;
 				8) #echo "Back"

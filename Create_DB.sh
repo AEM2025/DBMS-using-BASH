@@ -5,7 +5,7 @@
 # [Done..] 1 - Validate if Databases file exist or not.
 # [Done..] 2 - Validate DB_name not contain special characters or spaces.
 # [Done..] 3 - Validate if DB is already exist
-
+# [Done..] 4 - Check if name is Null or empty or don't match regex.
 
 # -r to ignore slash as a multi line and consider it as character.
 # -p to read and display message in the same line instead of using echo.

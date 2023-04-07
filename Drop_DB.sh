@@ -1,10 +1,10 @@
 #!/bin/bash 
 
 # Test Cases:
-# 1 - [Done...] Check if Databases file exist or not.
-# 2 - [Done...] Check if DB is already exist before removing it.
+# [Done...] 1 - Check if Databases file exist or not.
+# [Done...] 2 - Check if DB is already exist before removing it.
 
-read -rp "Enter the name of db you want to remove: " db_name;
+read -rp "Enter the name of db you want to remove: " db_name
 
 # we use this variable as flag to check everything is ok.
 error=""

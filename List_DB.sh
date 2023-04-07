@@ -9,7 +9,7 @@ error=""
 function validation {
 	
 	# 1 - Check if DataBases folder not exist.
-	if [ -d ./DataBases ]
+	if [ -d "./DataBases" ]
 	then
 		error="0"
 	else
@@ -38,5 +38,4 @@ then
 	ls -d */
 else
 	echo "Can't complete this action ❌❌"
-
 fi
