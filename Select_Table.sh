@@ -20,19 +20,19 @@ function Table_exist {
 
 # Select all
 function Select_All {
-	cat $DIR/$Table_Name.DATA
+	cat $DIR/$Table_Name.DATA | tail -n +2
 }
 
 # Select specific row
 function Select_Row {
 
-Data_Num=$(cat $DIR/$Table_Name.DATA | wc -l)
+Data_Num=$(cat $DIR/$Table_Name.DATA | tail -n +2 | wc -l)
 echo "We have $Data_Num records in this table"
 echo ""
 read -rp "Enter number of record that you want: " row
-if [ $row -lt $Data_Num ]
+if [ $row -le $Data_Num ]
 then
-	data=$(cat $DIR/$Table_Name.DATA | sed -n "$row p" )
+	data=$(cat $DIR/$Table_Name.DATA | tail -n +2 | sed -n "$row p" )
 	echo "$data"
 else
 	echo "Enter numbers between 1 and $Data_Num"
