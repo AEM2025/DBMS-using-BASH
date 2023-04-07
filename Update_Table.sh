@@ -21,8 +21,8 @@ else
     updateTable
 
     else
-    #  echo -e "Enter FIELD name to set: \c"
-     # read setField
+    #  
+     # read -rp "Enter FIELD name to set " setField
       #setFid=$(awk 'BEGIN{FS=":"}{if(NR==1){for(i=1;i<=NF;i++){if($i=="'$setField'") print i}}}' "DataBases/$DB/$tableName.DATA")
       #if [[ $setFid == "" ]]
       #then
