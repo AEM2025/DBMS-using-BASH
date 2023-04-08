@@ -5,23 +5,27 @@
 # 2 - Edit prompt to be clear.
 
 options=("Create Database" "List Databases" "Connect To Databases" "Drop Database" "Exit")
-
-echo "Enter choices from 1 to 5"
-while [[ "$REPLY" != "Exit" ]]
+echo " "
+PS3="Enter choices from 1 to 5: "
+while [[ "$choice" != "Exit" ]]
 do
-	select answer in "${options[@]}"
+	select choice in "${options[@]}"
 	do
-		case $REPLY in
-			1) source ./Create_DB.sh
-			       ;;
-			2) source ./List_DB.sh
-			      ;;
-			3) source ./Connect_DB.sh
-			       ;;
-			4) echo "drop db"
-			. ./Drop_DB.sh
+		case $choice in
+			"Create Database" ) source ./Create_DB.sh
+			      break
+			       	;;
+			"List Databases" ) source ./List_DB.sh
+			      break
 				;;
-			5) exit
+			"Connect To Databases" ) source ./Connect_DB.sh
+			       break
+				;;
+			"Drop Database" ) . ./Drop_DB.sh
+				break
+				;;
+			"Exit" ) exit
+				break
 				;;
 			*) echo "Invalid input please try again later"
 			       	;;
