@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 # Test Cases:
 # [Done...] 1 - Check if Databases file exist or not.
@@ -25,17 +25,16 @@ function Validation {
 	else
 		error="1"
 	       	echo "Error! No Database with this name: $db_name ❌"
-
 	fi
 }
 
 
-# Call function validation first 
+# Call function validation first
 Validation
 
 if [ $error -eq 0 ]
 then
-       	rm -r "./DataBases/$db_name" 
+       	rm -r "./DataBases/$db_name"
 	echo "Database: $db_name deleted successfully ✓ ✓"
 else
 

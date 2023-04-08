@@ -18,7 +18,8 @@ do
 			      ;;
 			3) source ./Connect_DB.sh
 			       ;;
-			4) source ./Drop_DB.sh 
+			4) echo "drop db"
+			. ./Drop_DB.sh
 				;;
 			5) exit
 				;;
