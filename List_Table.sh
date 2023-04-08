@@ -4,6 +4,7 @@
 # [Done..] 1 - Check if DataBases file exist.
 # [Done..] 2 - Check if DB file is exist.
 
+DB_Name=$1
 # We use this variable as flag. 
 error=""
 
@@ -41,9 +42,9 @@ function validation {
 # Call function to check everything
 validation
 
-if [ -d "./DataBases/$1" -a $error = 0 ]
+if [ -d "./DataBases/$DB_Name" -a $error = 0 ]
 then 
-	ls ./DataBases/$1 | grep ".DATA"
+	ls ./DataBases/$DB_Name | grep ".DATA"
 else 
 	echo "Can't complete this action ❌❌"
 fi
