@@ -5,10 +5,10 @@
 # 2 - Edit prompt to be clear.
 
 options=("Create Database" "List Databases" "Connect To Databases" "Drop Database" "Exit")
-echo " "
 PS3="Enter choices from 1 to 5: "
 while [[ "$choice" != "Exit" ]]
 do
+	echo " "
 	select choice in "${options[@]}"
 	do
 		case $choice in
