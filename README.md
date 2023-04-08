@@ -29,3 +29,8 @@ Upon user Connect to Specific Database, there will be new Screen with this Menu:
 - List Tables
 - Delete From Table
 - Drop DB
+
+### Demo
+
+https://user-images.githubusercontent.com/45972231/230731920-0677676b-5e8d-4d89-b2d5-2ff640e244a1.mp4
+
