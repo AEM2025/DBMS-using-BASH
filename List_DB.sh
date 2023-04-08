@@ -36,6 +36,8 @@ then
 	# 3 - display only directories.
 	cd ./DataBases
 	ls -d */
+	# Noteeeeee
+	cd ..
 else
 	echo "Can't complete this action ❌❌"
 fi
