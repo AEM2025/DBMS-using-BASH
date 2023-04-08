@@ -1,6 +1,8 @@
+#!/bin/bash
+
+DB=$1
 function updateTable {
-   read  -rp "enter the database name:" DB
-  
+
   read -rp "Enter Table Name: " tableName
   
   read -rp "Enter Condition Column name: " Col_Name
@@ -38,7 +40,7 @@ else
         echo $oldValue
         sed -i ''$NR's/'$oldValue'/'$newValue'/g' "DataBases/$DB/$tableName.DATA" 2>>./.error.log
         echo "Row Updated Successfully"
-        updateTable
+        #updateTable
       #fi
     fi
   fi
@@ -47,5 +49,4 @@ else
 
 #cut -d: -f1 "DataBases/$DB/$tableName.metadata" | xargs |sed -e 's/ /:/g'>"DataBases/$DB/$tableName.DATA"
 
-#echo "hello "
 updateTable

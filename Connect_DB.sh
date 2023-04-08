@@ -42,7 +42,7 @@ validation
 
 if [ $error -eq 0 ]
 then
-	PS3="DB $DB_Name -> "
+	PS3="DB $DB_Name -> "	
 	echo "Enter choices from 1 to 9"
 	while [[ "$REPLY" != "Exit" ]]
 	do
@@ -70,7 +70,7 @@ then
 					. ./Delete_Table.sh $DB_Name		
 				;;
 				7) #echo "Update table" 
-					. ./Update_Table.sh
+					. ./Update_Table.sh $DB_Name
 					;;
 				8) #echo "Back"
 					source ./Mainmenu.sh;;

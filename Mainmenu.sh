@@ -4,27 +4,21 @@
 # 1 - Edit choice menu.
 # 2 - Edit prompt to be clear.
 
-#SP3="Please enter your choice"
+options=("Create Database" "List Databases" "Connect To Databases" "Drop Database" "Exit")
 
 echo "Enter choices from 1 to 5"
-options=("Create Database" "List Databases" "Connect To Databases" "Drop Database" "exit")
-
-while [[ "$REPLY" != "exit" ]]
+while [[ "$REPLY" != "Exit" ]]
 do
 	select answer in "${options[@]}"
 	do
 		case $REPLY in
-			1) #echo "Create DB"
-			       . ./Create_DB.sh
+			1) source ./Create_DB.sh
 			       ;;
-			2) #echo "List DBs"
-			      . ./List_DB.sh
+			2) source ./List_DB.sh
 			      ;;
-			3) #echo "Connect to DBs"
-			       . ./Connect_DB.sh
+			3) source ./Connect_DB.sh
 			       ;;
-			4) #echo "Drop DBs" 
-				. ./Drop_DB.sh 
+			4) source ./Drop_DB.sh 
 				;;
 			5) exit
 				;;

@@ -33,11 +33,11 @@ function Validation {
 # Call function validation first 
 Validation
 
-if [ $error = 0 ]
+if [ $error -eq 0 ]
 then
-       	rm -r ./DataBases/$db_name 
+       	rm -r "./DataBases/$db_name" 
 	echo "Database: $db_name deleted successfully ✓ ✓"
 else
 
-	echo "Can't complete this action ❌❌"
+	echo "Can't complete this action ❌"
 fi
