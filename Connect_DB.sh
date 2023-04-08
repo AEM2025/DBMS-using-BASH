@@ -46,35 +46,47 @@ then
 	echo "Enter choices from 1 to 9"
 	while [[ "$REPLY" != "Exit" ]]
 	do
+		echo " "
 		select answer in "${options[@]}"
 		do
 			case $REPLY in
 				1) #echo "Create Table" 
 					# Pass DB_Name to the file to create tables inside it
 					source ./Create_Table.sh $DB_Name
+					break
 					;;
 				2) #echo "List Table"
 				 	. ./List_Table.sh $DB_Name      
+					break
 					;;
 				3) #echo "Drop Table"
 					# Pass DB_Name to the file to delete tables from it
 					source ./Drop_Table.sh $DB_Name
+					break
 					;;
 				4) #echo "Insert into Table"
 					source ./Insert_Into_Table.sh $DB_Name
+					break
 					;;
 				5) #echo "Select from table"
 					source ./Select_Table.sh $DB_Name
+					break
 					;;
 				6) echo "Delete from table" 
 					. ./Delete_Table.sh $DB_Name		
+					break				
 				;;
 				7) #echo "Update table" 
 					. ./Update_Table.sh $DB_Name
+					break
 					;;
 				8) #echo "Back"
-					source ./Mainmenu.sh;;
-				9) exit;;
+					source ./Mainmenu.sh
+					break
+					;;
+				9) exit
+				break
+				;;
 				*) echo "Invalid input please try again later" ;;
 			esac
 		done
@@ -82,4 +94,3 @@ then
 else
 	echo "Can't complete this action ❌❌"
 fi
-
