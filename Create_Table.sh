@@ -41,8 +41,8 @@ function validation {
         fi
 
         # 3 - Check if this table exist or not and Both files are exists (data & Metadata)
-
-	if [ -f ./DataBases/$1/$Table_Name.DATA -a -f ./DataBases/$1/$Table_Name.metadata -a $error = 0 ]
+	
+	if [ -f "./DataBases/$1/$Table_Name.DATA" -a -f "./DataBases/$1/$Table_Name.metadata" -a  $error = 0 ]
 	then
 		error="1"
  		echo "Error! This table not exist ❌"
@@ -60,11 +60,10 @@ function validation {
                 error="1"
  		echo "Error! Table name contain special character ❌"
 	fi
-
 }
 
 # call function here.
-validation
+validation $1
 
 if [ $error = 0 ]
 then
