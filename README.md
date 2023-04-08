@@ -15,13 +15,17 @@ The Project aim to develop DBMS, that will enable users to store and retrieve th
 Upon user Connect to Specific Database, there will be new Screen with this Menu:
 
 (Ahmed)
+
 - Create Table 
 - Drop Table
 - Insert into Table
 - Select From Table
+- Create DB
+- List DB
 
 (Abdo)
 
 - Update Table
 - List Tables
 - Delete From Table
+- Drop DB
